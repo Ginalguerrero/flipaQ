@@ -1,7 +1,11 @@
-const { Schema, model } = require("mongoose");
+const { Schema,  Types } = require("mongoose");
 
 const schema = new Schema(
   {
+    cardId: {
+      type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
+    },
     question: {
       type: String,
       required: true,
