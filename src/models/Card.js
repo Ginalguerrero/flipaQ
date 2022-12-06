@@ -5,16 +5,17 @@ const schema = new Schema(
     question: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
-    question: {
+    answer: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
+  },
   {
-    _id: false
+    _id: false,
   }
 );
 
-module.exports = model("cardddddd", schema);
+module.exports = model("card", schema);
