@@ -4,22 +4,20 @@ const { ObjectId } = Schema.Types;
 
 const schema = new Schema(
   {
-    username: {
+    name: {
       type: String,
       required: true,
       unique: true,
       trim: true,
+      minLength: 3,
+      minLength: 50
     },
-    password:{
-      type: String,
-      required: True,
-      minLength: 4
-    },
-    decks: [{ ref: "deck", type: ObjectId }]
+    
+    cards: [{ ref: "card", type: ObjectId }]
   },
   {
     _id: false
   }
 );
 
-module.exports = model("user", schema);
+module.exports = model("deck", schema);
