@@ -7,3 +7,5 @@ router.get("/decks/:deckId/:cardId", deckController.getCards);
 
 router.post("/decks", deckController.createDeck);
 router.post("/decks/:deckId", deckController.createCard);
+
+module.exports = router;
