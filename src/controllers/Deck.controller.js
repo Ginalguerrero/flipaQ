@@ -1,11 +1,17 @@
-const getDecks = (req, res) => {}
+const { Deck } = require("../models");
+const { StatusCodes } = require("http-status-codes");
 
-const getCards = (req, res) => {}
+// Use StatusCodes.NOT_FOUND instead of like 404
+// For more info https://www.npmjs.com/package/http-status-codes
 
-const getCard = (req, res) => {}
+const getDecks = (req, res) => {};
 
-const createDeck = (req, res) => {}
+const getCards = (req, res) => {};
 
-const createCard = (req, res) => {}
+const getCard = (req, res) => {};
 
-module.exports = {getDecks, getCards, getCard, createDeck, createCard}
+const createDeck = (req, res) => {};
+
+const createCard = (req, res) => {};
+
+module.exports = { getDecks, getCards, getCard, createDeck, createCard };
