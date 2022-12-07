@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const { router: userRoutes } = require("./user.routes");
-const { router: deckRoutes } = require(".deck.routes");
+const { router: userRoutes } = require("./User.router");
+const { router: deckRoutes } = require("./Deck.router");
 
 router.use(userRoutes);
 router.use(deckRoutes);

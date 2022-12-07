@@ -1,4 +1,4 @@
-const { Deck } = require("../models");
+const { Deck } = require("../models/Deck.js");
 const { StatusCodes } = require("http-status-codes");
 
 // Use StatusCodes.NOT_FOUND instead of like 404

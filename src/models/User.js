@@ -11,10 +11,10 @@ const schema = new Schema({
   },
   password: {
     type: String,
-    required: True,
+    required: true,
     minLength: 4,
   },
   decks: [{ ref: "deck", type: ObjectId }],
 });
 
-module.exports = model("user", schema);
+module.exports = { User: model("user", schema) };
