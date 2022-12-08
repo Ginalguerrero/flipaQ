@@ -24,4 +24,14 @@ schema.pre("save", function (next) {
   next();
 });
 
+schema.statics.login = async function (username, password) {
+  const user = await this.findOne({ username });
+  if (user) {
+    const auth = bcrypt.compareSync(password, user.password);
+    if (auth) {
+      return user;
+    }
+  }
+  throw Error("Invalid username and/or password");
+};
 module.exports = { User: model("user", schema) };
