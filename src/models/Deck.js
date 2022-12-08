@@ -14,9 +14,6 @@ const schema = new Schema(
     },
     
     cards: [cardSchema]
-  },
-  {
-    _id: false
   }
 );
 
