@@ -5,23 +5,13 @@ const bcrypt = require("bcrypt");
 // Use StatusCodes.NOT_FOUND instead of like 404
 // For more info https://www.npmjs.com/package/http-status-codes
 const signup = async (req, res) => {
-  const { username, password } = req.body;
-
   try {
-    const user = await User.create({
-      username,
-      password: bcrypt.hashSync(password, 15),
-    });
-    res
-      .status(StatusCodes.CREATED)
-      .send({
-        message: "User created.",
-        user: { username: user.username, _id: user._id },
-      });
+    const user = await User.create(req.body);
+    res.status(StatusCodes.CREATED).send({ message: "User created." });
   } catch (error) {
     res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .send({ message: "Could NOT create user." });
+      .send({ message: "Could NOT create user.", error: error.message });
   }
 };
 
