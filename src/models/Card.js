@@ -1,10 +1,6 @@
-const { Schema, Types, model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const schema = new Schema({
-  cardId: {
-    type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId(),
-  },
   question: {
     type: String,
     required: true,
@@ -17,4 +13,4 @@ const schema = new Schema({
   },
 });
 
-module.exports = model("card", schema);
+module.exports = { Card: model("card", schema) };

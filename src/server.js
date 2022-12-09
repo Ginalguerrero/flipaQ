@@ -1,5 +1,5 @@
 const express = require("express");
-
+const cookieParser = require("cookie-parser");
 const db = require("./config/conn.js");
 const routes = require("./routes");
 require("dotenv").config();
@@ -10,6 +10,7 @@ const app = express();
 const { urlencoded, json } = express;
 app.use(urlencoded({ extended: true }));
 app.use(json());
+app.use(cookieParser());
 app.use(routes);
 
 db.once("open", () =>
