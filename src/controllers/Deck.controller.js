@@ -12,7 +12,7 @@ const getDecks = async (req, res) => {
       "decks"
     );
     const { decks } = userDecks;
-    res.status(StatusCodes.OK).send({ decks });
+    res.status(StatusCodes.OK).send({ decks: decks.map(({name}) => {name}) });
   } catch (err) {
     res
       .status(StatusCodes.BAD_REQUEST)
@@ -34,7 +34,7 @@ const getCards = async (req, res) => {
         .send({ message: "This deck is not yours" });
     const deckCards = await Deck.findOne({ _id: deckId }).populate("cards");
     const { cards } = deckCards;
-    res.status(StatusCodes.OK).send({ cards });
+    res.status(StatusCodes.OK).send({ cards.map(({question, answer}) => {question, answer}) });
   } catch (err) {
     res
       .status(StatusCodes.BAD_REQUEST)
