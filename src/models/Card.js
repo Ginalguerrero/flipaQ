@@ -1,10 +1,6 @@
 const { Schema, Types, model } = require("mongoose");
 
 const schema = new Schema({
-  cardId: {
-    type: Schema.Types.ObjectId,
-    default: () => new Types.ObjectId(),
-  },
   question: {
     type: String,
     required: true,
