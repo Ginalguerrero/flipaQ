@@ -10,12 +10,17 @@ const requireAuth = (req, res, next) => {
       if (!err) {
         res.locals.userId = decodedToken.id;
         next();
+      } else {
+        res
+          .status(StatusCodes.UNAUTHORIZED)
+          .send({ message: "You shouldn't be here" });
       }
     });
+  } else {
+    res
+      .status(StatusCodes.UNAUTHORIZED)
+      .send({ message: "You shouldn't be here" });
   }
-  res
-    .status(StatusCodes.UNAUTHORIZED)
-    .send({ message: "You shouldn't be here" });
 };
 
 module.exports = { requireAuth };

@@ -15,12 +15,12 @@ const schema = new Schema({
     type: String,
     required: [true, "Password cannot be empty"],
     minlength: [4, "Password should have at least 4 caracters"],
-    decks: [{ ref: "deck", type: ObjectId }],
   },
+  decks: [{ ref: "deck", type: ObjectId }],
 });
 
 schema.pre("save", function (next) {
-  this.password = bcrypt.hashSync(this.password, 15);
+  this.password = bcrypt.hashSync(this.password, 11);
   next();
 });
 

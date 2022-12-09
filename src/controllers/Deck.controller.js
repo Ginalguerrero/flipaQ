@@ -6,18 +6,16 @@ const { Types } = require("mongoose");
 // For more info https://www.npmjs.com/package/http-status-codes
 
 const getDecks = async (req, res) => {
-  console.log(res.locals.userId);
   try {
-    const userDecks = await User.find({ _id: res.locals.userId }).select({
-      decks: 1,
-      _id: 0,
-    });
-    const decks = await Decks.find({ $in: userDecks.map(Types.ObjectId) });
-    req.status(StatusCodes.OK).send({ decks });
+    const userDecks = await User.findOne({ _id: res.locals.userId }).populate(
+      "decks"
+    );
+    const { decks } = userDecks;
+    res.status(StatusCodes.OK).send({ decks });
   } catch (err) {
     res
       .status(StatusCodes.BAD_REQUEST)
-      .json({ message: "Could not get create decks" });
+      .send({ message: "Could not get list decks", error: err });
   }
 };
 
@@ -27,19 +25,19 @@ const getCard = async (req, res) => {};
 
 const createDeck = async (req, res) => {
   try {
-    const deck = await Deck.create({ ...req.body });
-
-    const updatedUser = await User.findOneAndUpdate(
-      { _id: Types.ObjectId(res.locals.userId) },
-      { $push: { decks: deck._id } },
+    const deck = await Deck.create(req.body);
+    await User.findOneAndUpdate(
+      { _id: res.locals.userId },
+      { $addToSet: { decks: deck._id } },
       { new: true }
     );
 
     res.status(StatusCodes.CREATED).send({ message: "Deck created" });
   } catch (err) {
+    console.log({ err });
     res
       .status(StatusCodes.BAD_REQUEST)
-      .send({ message: "Could not create deck" });
+      .send({ message: "Could not create deck", error: err });
   }
 };
 
