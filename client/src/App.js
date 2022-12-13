@@ -13,7 +13,8 @@ function App() {
   };
 
   return (
-    <BrowserRouter className="App">
+    <div className="App">
+    <BrowserRouter>
       <Routes>
         <Route
           path="/"
@@ -30,6 +31,7 @@ function App() {
         {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
