@@ -1,25 +1,16 @@
-const { Schema,  Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const schema = new Schema(
-  {
-    cardId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
-    question: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    answer: {
-      type: String,
-      required: true,
-      trim: true,
-    },
+const schema = new Schema({
+  question: {
+    type: String,
+    required: true,
+    trim: true,
   },
-  {
-    _id: false,
-  }
-);
+  answer: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+});
 
-module.exports = model("card", schema);
+module.exports = { Card: model("card", schema) };

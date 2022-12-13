@@ -1,11 +1,16 @@
-const { connect, connection } = require('mongoose')
+const mongoose = require("mongoose");
 
-const connectionString = process.env.CONN;
+require("dotenv").config();
 
-console.log(connectionString)
+const { connect, connection } = mongoose;
+mongoose.set("strictQuery", true);
+
+const connectionString = process.env.MONGO_URI;
+
+console.log(connectionString);
 connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 module.exports = connection;
