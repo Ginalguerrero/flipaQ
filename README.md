@@ -16,3 +16,8 @@ filpaQ is a study app that is used to create and review "flashcards". I works si
 ## Screenshot
 
 ## Deployed Link
+
+## Creators
+- Gina Guerrero
+- Jie Zou
+- Greg Krolick
