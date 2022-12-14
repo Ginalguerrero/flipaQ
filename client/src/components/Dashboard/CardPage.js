@@ -1,8 +1,8 @@
-import QuizCard from "../components/QuizCard";
+import QuizCard from "../Deck/QuizCard";
 import { BsCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
-import "./HomePage.css";
+import "./CardPage.css";
 
-export default function HomePage({
+export default function CardPage({
   quizMode,
   selectedDeck,
   questionNumber,

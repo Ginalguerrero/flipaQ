@@ -2,8 +2,10 @@ import React, { useState,useEffect } from "react";
 import SideBar from "../../components/Sidebar/SideBar";
 import Deck from "../../components/Deck";
 import { deckData } from "./deckData";
+import CardPage from "../../components/Dashboard/CardPage";
+
 function Page() {
-    const [userDecks, setUserDecks] = useState([]);
+  const [userDecks, setUserDecks] = useState([]);
   const [selectedDeck, setSelectedDeck] = useState({});
   const [addQuestionsView, setAddQuestionsView] = useState(false);
   const [quizMode, setQuizMode] = useState(false);
@@ -121,18 +123,31 @@ function Page() {
         updateCard={updateCard}
     />
 
-    <Deck
-        userDecks={userDecks}
-        setUserDecks={setUserDecks}
-        quizMode={quizMode}
-        setQuizMode={setQuizMode}
-        selectedDeck={selectedDeck}
-        questionNumber={questionNumber}
-        setQuestionNumber={setQuestionNumber}
-        cardSide={cardSide}
-        setCardSide={setCardSide}
-        deleteCard={deleteCard}
-    />
+{userDecks.map(deck => {
+  return <Deck
+  deck={deck}
+  userDecks={userDecks}
+  setUserDecks={setUserDecks}
+  quizMode={quizMode}
+  setQuizMode={setQuizMode}
+  selectedDeck={selectedDeck}
+  questionNumber={questionNumber}
+  setQuestionNumber={setQuestionNumber}
+  cardSide={cardSide}
+  setCardSide={setCardSide}
+  deleteCard={deleteCard}
+  setSelectedDeck={setSelectedDeck}
+/>
+})}
+
+<CardPage
+  quizMode={quizMode}
+  selectedDeck={selectedDeck}
+  questionNumber={questionNumber}
+  setQuestionNumber={setQuestionNumber}
+  cardSide={cardSide}
+  setCardSide={setCardSide}
+/>
   </>
   );
 }
