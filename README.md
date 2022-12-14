@@ -20,6 +20,10 @@ filpaQ is a study app that is used to create and review "flashcards". I works si
 - Heroku
 - React
 
+## Installation & Usage
+- Run `npm i` or `npm install` to install the dependecies
+- Run `npm run start:dev` to run the app
+
 ## Code-Snippet
 
 ## Screenshot
