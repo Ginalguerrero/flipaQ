@@ -35,7 +35,7 @@ export default function HomePage({
       <div className="sidebar-block"></div>
       {quizMode === false ? (
         <div>
-          <h1 className="home-page-title">Home Page</h1>
+          <h1 className="home-page-title">Dashboard</h1>
           <p>Select a deck to get started!</p>
         </div>
       ) : (
