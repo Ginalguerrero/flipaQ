@@ -1,12 +1,23 @@
 import React, { useState } from "react";
+import { signUp } from "../../tools/useAxios";
+import {useNavigate} from "react-router-dom";
 
 export const Register = (props) => {
   const [username, setUsername] = useState('');
   const [pass, setPass] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username);
+    
+    try {
+      const user = await signUp({username, password: pass});
+      navigate("/home", {state: {user}})
+    } catch (err) {
+      console.log(err)
+    }
   };
 
   return (
