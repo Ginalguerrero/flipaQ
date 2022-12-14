@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { signUp } from "../../tools/useAxios";
 import {useNavigate} from "react-router-dom";
+import Logo from "../../components/Logo/flipaQ_logo.jpeg";
+console.log (Logo)
 
 export const Register = (props) => {
   const [username, setUsername] = useState('');
@@ -22,6 +24,7 @@ export const Register = (props) => {
 
   return (
     <div className="auth-form-container">
+      <img className="logo" src={Logo} alt="Logo" />
       <h2>Register</h2>
       <form className="register-form" onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>

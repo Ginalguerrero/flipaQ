@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import {login} from "../../tools/useAxios";
+import Logo from "../../components/Logo/flipaQ_logo.jpeg";
+console.log (Logo)
 
 export const Login = (props) => {
     const [username, setUsername] = useState('');
@@ -20,6 +22,7 @@ export const Login = (props) => {
 
     return (
         <div className="auth-form-container">
+          <img className="logo" src={Logo} alt="Logo" />
             <h2>Login</h2>
             <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>

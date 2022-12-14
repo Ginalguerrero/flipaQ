@@ -32,3 +32,9 @@
   height: 4em;
   color: gray;
 }
+
+.logo {
+  position: absolute;
+        top: 20px;
+        right: 20px;
+   }

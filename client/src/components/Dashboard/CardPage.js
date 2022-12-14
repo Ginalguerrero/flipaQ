@@ -1,6 +1,8 @@
 import QuizCard from "../Deck/QuizCard";
 import { BsCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import "./CardPage.css";
+import Logo from "../../components/Logo/flipaQ_logo.jpeg";
+console.log (Logo)
 
 export default function CardPage({
   quizMode,
@@ -32,6 +34,7 @@ export default function CardPage({
 
   return (
     <div className="home-page">
+      <img className="logo" src={Logo} alt="Logo" />
       <div className="sidebar-block"></div>
       {quizMode === false ? (
         <div>
