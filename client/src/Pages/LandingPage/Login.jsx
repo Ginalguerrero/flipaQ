@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import {login} from "../../tools/useAxios";
 
 export const Login = (props) => {
     const [username, setUsername] = useState('');
     const [pass, setPass] = useState('');
     const navigate = useNavigate();
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        navigate("/home")
         
-    }
+        try {
+          const user = await login({username, password: pass});
+          navigate("/home", {state: {user}})
+        } catch (err) {
+          console.log(err)
+        }
+      };
+    
 
     return (
         <div className="auth-form-container">
