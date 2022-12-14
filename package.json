@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "For users to be able to create and study flashcards",
   "main": "server/server.js",
+  "engines": {
+    "node": "16.x"
+  },
   "devDependencies": {
     "concurrently": "^5.2.0"
   },
