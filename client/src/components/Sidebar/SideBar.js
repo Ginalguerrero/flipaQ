@@ -1,8 +1,8 @@
 import { AiFillPlayCircle } from "react-icons/ai";
 import { HiPlusCircle, HiStop } from "react-icons/hi";
-import Deck from "../components/Deck";
+import Deck from "../Deck";
 import IconBar from "./IconBar";
-import Card from "../components/Card";
+import Card from "../Card/Card";
 import "./SideBar.css";
 
 export default function SideBar({

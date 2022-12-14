@@ -1,4 +1,4 @@
-export const Deck = [
+export const deckData = [
   {
     id: 0,
     data: { name: "React Study" },
