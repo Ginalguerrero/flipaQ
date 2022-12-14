@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./Pages/LandingPage"
+import LandingPage from "./Pages/LandingPage";
+import Dashboard from "./Pages/HomePage"
 
 function App() {
   return (
