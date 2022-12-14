@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GoTrashcan } from "react-icons/go";
 import { BsBoxArrowInRight } from "react-icons/bs";
 import "./Deck.css";
+import "./QuizCard.js";
 
 export default function Deck({
   deck,

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { GiRapidshareArrow } from "react-icons/gi";
-import "./Card.css";
+import "../Card/Card.css";
 
 export default function QuizCard({
   selectedDeck,
