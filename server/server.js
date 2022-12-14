@@ -15,6 +15,10 @@ app.use(cors());
 app.use(cookieParser());
 app.use(routes);
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 db.once("open", () =>
   app.listen(PORT, () => console.log(`Running at port: ${PORT}!`))
 );
