@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage";
 import LandingPage from "./Pages/LandingPage";
 import { useState, useEffect } from "react";
 import SideBar from "./containers/SideBar";
+import { Deck } from "./Pages/Deck";
 
 function App() {
   const [userDecks, setUserDecks] = useState([]);
@@ -19,7 +20,7 @@ function App() {
     if (data) {
       setUserDecks(JSON.parse(data));
     } else {
-      setUserDecks(initialDecks);
+      setUserDecks(Deck);
     }
   }, []);
 

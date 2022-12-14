@@ -1,4 +1,4 @@
-export const deck = {
+export const Deck = {
     name: "This is my deck",
     cards: [
         {
