@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const REACT_API = "http://localhost:3001";
+const REACT_API = "https://flipaq-app.herokuapp.com";
 
 function signUp(data) {
   return axios.post(`${REACT_API}/signup`, data);
