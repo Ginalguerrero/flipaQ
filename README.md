@@ -40,9 +40,36 @@ GitHub: https://github.com/Ginalguerrero/flipaQ
 - Run `npm i` or `npm install` to install the dependecies
 - Run `npm run start:dev` to run the app
 
-## Code-Snippet
+## User Stories
 
-## Screenshot
+User
+To be able to log in and make an account 
+Store my info between sessions
+FE: design for the login/signup pages
+BE: login/signup routes
+
+User
+Create cards with front (q) and back(a)
+Add to deck
+FE: Form for card creation 
+(input-> question,answer, and deck)
+BE: Needs to store the card making sure that the field is not empty
+
+User
+Create a deck that is a collection of cards
+Study the deck
+FE: Form for deck creation
+(input-> name)
+BE: Needs to create the deck on the database and check if name is unique
+
+
+
+## Code-Snippet
+https://github.com/Ginalguerrero/flipaQ/blob/24fce8b6492d71ec6b0f70ec0f5a41c13d4f60b5/client/src/components/Deck/QuizCard.js#L27-L45
+
+## Video Clip
+
+![Creating cards](Screenshots/React-App.gif)
 
 ## Creators
 - Gina Guerrero
