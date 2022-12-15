@@ -1,3 +1,4 @@
+
 # flipaQ
 
 ## Description
@@ -6,8 +7,11 @@ filpaQ is a study app that is used to create and review "flashcards". it works s
 ## Deployed Link
 Heroku: https://flipaq-app.herokuapp.com/
 
+[React App (1).webm](https://user-images.githubusercontent.com/112473624/207942657-24835485-9b27-4536-bb45-7e92da9b897d.webm)
+
 ## GitHub Repo Link
 GitHub: https://github.com/Ginalguerrero/flipaQ
+
 
 ## Features
 - User creation
